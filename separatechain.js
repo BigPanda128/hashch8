@@ -44,7 +44,7 @@ function showDistro() {
 	var n = 0;
 	for (var i = 0; i < this.table.length; ++i) {
 		if (this.table[i][0] !== undefined) {
-			print(i + ": " + this.table[i]);
+			print(i + ": " + this.table[i][0]);
 		}
 	}
 }
@@ -56,7 +56,7 @@ function put(data) {
 		this.table[key][index] = data;
 	}
 	else {
-		while (this.table[key][index] !== undefined) {
+		while (this.table[key][index] != undefined) {
 			++index;
 		}
 		this.table[key][index] = data;
