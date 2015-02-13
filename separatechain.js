@@ -1,4 +1,7 @@
-//load("HashTable.js");
+//Ryan Postma
+//CMP344
+//2/13/2015
+//chapter 8 chaining
 
 function HashTable() {
 	 this.table = new Array(137);
@@ -34,12 +37,14 @@ function HashTable() {
 
 
 
+//crate chains for each space in table
 function buildChains() {
 	for (var i = 0; i < this.table.length; ++i) {
 		this.table[i] = [];
 	}
 }
 
+//display all items in table
 function showDistro() {
 	var n = 0;
 	for (var i = 0; i < this.table.length; ++i) {
@@ -49,6 +54,7 @@ function showDistro() {
 	}
 }
 
+//adds an element into the table
 function put(data) {
 	var key = this.betterHash(data);
 	var index = 0;
@@ -63,6 +69,7 @@ function put(data) {
 	}
 }
 
+//retreives but doesnt remove an element from table
 function get(key) {
 	var index = 0;
 	var pos = this.betterHash(key);

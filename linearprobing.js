@@ -1,3 +1,8 @@
+//Ryan Postma
+//CMP344
+//2/13/2015
+//chapter 8 linear probing
+
 function HashTable() {
 	 this.table = new Array(137);
 	  this.simpleHash = simpleHash;
@@ -30,7 +35,7 @@ function HashTable() {
 	                     }
 	      
 	      
-	                     function put(key, data) {
+	                     function put(key, data) {add element 
 	                      var pos = this.betterHash(key);
 			      if (this.table[pos] == undefined) {
 				      this.table[pos] = key;
@@ -45,7 +50,7 @@ function HashTable() {
 			      }
 			    }
 
-function get(key) {
+function get(key) {//retrive element
 	var hash = -1;
 	hash = this.betterHash(key);
 	if (hash > -1) {
@@ -59,7 +64,7 @@ function get(key) {
 }
 
 	      
-	                       function showDistro() {
+	                       function showDistro() {//display table
 	                        var n = 0;
 	                         for (var i = 0; i < this.table.length; ++i) {
 	                         if (this.table[i] != undefined) {
