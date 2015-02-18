@@ -8,18 +8,17 @@ load("linearprobing.js");
 
 var words = new HashTable();
 
-words.put("superfluous", "exceeding what is sufficient or necessary");
-words.put("deflagrate", "to burn rapidly with intense heat and sparks being given off");
-words.put("overweening", "arrogant");
-words.put("folderol", "a useless ornament or accessory");
-words.put("untenable", "not able to be defended");
-words.put("poignant", "painfully or deeply affecting the feelings");
-words.put("eradicate", "to do away with as completely as if pulling up by the roots");
-words.put("tantara", "the blare of a trumpet or horn");
-words.put("smarmy", "revealing or marked by a smug, ingratiating, or false earnestness");
-words.put("diapason", "the entire range of musical tones");
-words.put("inimical", "being adverse often by reason of hostility or malevolence");
-words.put("moxie", "energy");
+function getWords() {
+	var word = read("words.txt").split("\n");
+	for (var i = 0; i < word.length; ++i) {
+		word[i] = word[i].trim();
+	}
+	for (var i = 0; i < word.length; ++i) {
+		var both = word[i].split(".");
+		words.put(both[0],both[1]);
+	}
+}
 
+getWords();
 words.showDistro();
-
+print(words.get("tantara"));
