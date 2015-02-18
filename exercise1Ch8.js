@@ -21,4 +21,6 @@ function getWords() {
 
 getWords();
 words.showDistro();
-print(words.get("tantara"));
+print("Pick a word to see the definition: ");
+var input = readline();
+print(words.get(input));
